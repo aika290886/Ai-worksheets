@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Основные понятия машинного обучения — 10 класс</title>
+<style>
+body{margin:0;background:#f4f7fb;color:#172033;font:16px/1.55 Arial,sans-serif}.wrap{max-width:900px;margin:auto;padding:16px}
+.hero{background:linear-gradient(135deg,#172554,#4c1d95);color:#fff;padding:28px;border-radius:22px}
+.card{background:#fff;border:1px solid #dbe3ef;border-radius:18px;padding:20px;margin:16px 0;box-shadow:0 5px 16px #33415518}
+h1{margin:0 0 8px;font-size:clamp(27px,6vw,40px)}h2{color:#172554}h3{color:#312e81}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media(max-width:650px){.grid{grid-template-columns:1fr}}
+label{font-weight:700;display:block;margin:9px 0 5px}input[type=text],textarea,select{width:100%;padding:11px;border:1px solid #cbd5e1;border-radius:11px;font:inherit;box-sizing:border-box}
+.note{background:#eff6ff;border-left:5px solid #2563eb;padding:13px;border-radius:10px}.warning{background:#fff7ed;border-left:5px solid #f97316;padding:13px;border-radius:10px}
+.task{border:1px solid #dbe3ef;padding:16px;border-radius:15px;margin:13px 0;background:#fbfdff}.options label{font-weight:400}
+button{border:0;border-radius:12px;padding:12px 17px;margin:5px 5px 5px 0;color:#fff;background:#2563eb;font-weight:700;font-size:15px}button.green{background:#15803d}button.purple{background:#7c3aed}
+.feedback{font-weight:700;margin-top:8px}.correct{color:#15803d}.wrong{color:#dc2626}.score{background:#eef2ff;padding:15px;border-radius:12px;font-weight:800;font-size:20px}
+#photoPreview{display:none;max-width:100%;max-height:420px;margin-top:12px;border-radius:12px}.small{color:#64748b;font-size:13px}
+.chips{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}@media(max-width:650px){.chips{grid-template-columns:1fr}}
+.chip{background:#eef2ff;padding:12px;border-radius:12px;text-align:center;font-weight:700}
+</style>
+</head>
+<body><div class="wrap">
+<div class="hero"><h1>Основные понятия машинного обучения</h1><div>Интерактивный рабочий лист • 10 класс</div></div>
+
+<section class="card"><h2>👩‍🎓 Данные ученика</h2><div class="grid">
+<div><label>ФИО</label><input id="fio" type="text"></div>
+<div><label>Класс</label><input id="class" type="text"></div></div>
+<div class="note"><b>Порядок:</b> изучи лекцию → запиши пункты в тетрадь → выполни задания → сфотографируй записи → прикрепи фото → отправь учителю.</div></section>
+
+<section class="card"><h2>📘 1. Мини-лекция</h2>
+<p><b>Машинное обучение (ML)</b> — направление искусственного интеллекта, при котором алгоритм учится находить закономерности в данных и использовать их для новых случаев.</p>
+<div class="note"><b>✍️ ОБЯЗАТЕЛЬНО ЗАПИШИ В ТЕТРАДЬ 8 ПУНКТОВ ИЗ ЛЕКЦИИ:</b>
+<ol>
+<li><b>Машинное обучение</b> — обучение алгоритма на данных.</li>
+<li><b>Данные</b> — информация, на которой обучается модель.</li>
+<li><b>Признак (feature)</b> — характеристика объекта, используемая моделью.</li>
+<li><b>Целевая переменная (target)</b> — результат, который модель должна предсказать.</li>
+<li><b>Обучающая выборка</b> — примеры, используемые для обучения.</li>
+<li><b>Модель</b> — математическое представление закономерностей, найденных в данных.</li>
+<li><b>Обучение с учителем</b> — обучение на примерах с известными правильными ответами.</li>
+<li><b>Обучение без учителя</b> — поиск структуры и закономерностей без заранее известных ответов.</li>
+</ol></div>
+<div class="warning"><b>Важно:</b> модель не «понимает» данные как человек. Она выявляет закономерности по примерам.</div>
+<h3>Три основных типа обучения</h3><div class="chips">
+<div class="chip">👩‍🏫 С учителем<br><small>есть правильные ответы</small></div>
+<div class="chip">🔎 Без учителя<br><small>ищем структуру</small></div>
+<div class="chip">🎮 С подкреплением<br><small>награда за действия</small></div></div>
+<p><b>Пример:</b> если показать модели письма с метками «спам» и «не спам», она может научиться классифицировать новые письма.</p>
+</section>
+
+<section class="card"><h2>🎯 2. Интерактивные задания</h2>
+<div class="task"><b>1. Один правильный ответ</b><p>Что такое машинное обучение?</p>
+<label><input type="radio" name="q1" value="a"> Создание программы только по заранее заданным правилам</label>
+<label><input type="radio" name="q1" value="b"> Обучение алгоритма на данных для выявления закономерностей</label>
+<label><input type="radio" name="q1" value="c"> Хранение файлов</label><label><input type="radio" name="q1" value="d"> Создание презентации</label><div id="f1"></div></div>
+
+<div class="task"><b>2. Несколько правильных ответов</b><p>Что может быть признаком автомобиля?</p>
+<label><input type="checkbox" name="q2" value="a"> Цвет</label><label><input type="checkbox" name="q2" value="b"> Объём двигателя</label><label><input type="checkbox" name="q2" value="c"> Марка</label><label><input type="checkbox" name="q2" value="d"> Предсказанная моделью цена</label><div id="f2"></div></div>
+
+<div class="task"><b>3. Верно / неверно</b><p>При обучении с учителем правильные ответы для обучающих примеров известны.</p>
+<label><input type="radio" name="q3" value="true"> Верно</label><label><input type="radio" name="q3" value="false"> Неверно</label><div id="f3"></div></div>
+
+<div class="task"><b>4. Соотнеси</b><div class="grid">
+<div><label>Признак</label><select id="q4a"><option value="">Выбери</option><option value="a">Характеристика объекта</option><option value="b">Правильный ответ</option><option value="c">Набор примеров</option><option value="d">Закономерности модели</option></select></div>
+<div><label>Target</label><select id="q4b"><option value="">Выбери</option><option value="a">Характеристика объекта</option><option value="b">Правильный ответ</option><option value="c">Набор примеров</option><option value="d">Закономерности модели</option></select></div>
+<div><label>Обучающая выборка</label><select id="q4c"><option value="">Выбери</option><option value="a">Характеристика объекта</option><option value="b">Правильный ответ</option><option value="c">Набор примеров</option><option value="d">Закономерности модели</option></select></div>
+<div><label>Модель</label><select id="q4d"><option value="">Выбери</option><option value="a">Характеристика объекта</option><option value="b">Правильный ответ</option><option value="c">Набор примеров</option><option value="d">Закономерности модели</option></select></div>
+</div><div id="f4"></div></div>
+
+<div class="task"><b>5. Определи тип обучения</b><p>Фотографии кошек и собак заранее подписаны «кошка» или «собака». Какой тип обучения?</p>
+<select id="q5"><option value="">Выбери</option><option>Обучение с учителем</option><option>Обучение без учителя</option><option>Обучение с подкреплением</option></select><div id="f5"></div></div>
+
+<div class="task"><b>6. Найди лишнее</b><p>Что НЕ является типичным применением машинного обучения?</p>
+<label><input type="radio" name="q6" value="a"> Рекомендации фильмов</label><label><input type="radio" name="q6" value="b"> Распознавание изображений</label><label><input type="radio" name="q6" value="c"> Калькулятор, всегда выполняющий одну заранее заданную операцию</label><label><input type="radio" name="q6" value="d"> Определение спама</label><div id="f6"></div></div>
+
+<div class="task"><b>7. Ситуация — ответ своими словами</b><p>Школа хочет предсказывать результат контрольной работы ученика. Назови <b>два возможных признака</b>.</p><textarea id="q7" rows="4"></textarea></div>
+<div class="task"><b>8. Объясни</b><p>Чем модель машинного обучения отличается от обычной программы, где все правила заранее прописал разработчик?</p><textarea id="q8" rows="5"></textarea></div>
+</section>
+
+<section class="card"><h2>🧠 3. Самопроверка</h2><button onclick="check()">Проверить задания</button><div id="score" class="score" style="display:none"></div></section>
+
+<section class="card"><h2>📷 4. Фото тетради</h2><p>Сфотографируй страницу с <b>8 пунктами лекции</b> и прикрепи фото.</p>
+<input id="photo" type="file" accept="image/*" capture="environment" onchange="preview(event)">
+<img id="photoPreview"><div id="photoName" class="small"></div></section>
+
+<section class="card"><h2>💭 5. Рефлексия</h2>
+<label>Что нового ты узнал(а)?</label><textarea id="r1" rows="3"></textarea>
+<label>Что было самым сложным?</label><textarea id="r2" rows="3"></textarea>
+<label>Насколько понял(а) тему?</label><select id="r3"><option value="">Выбери</option><option>Полностью понял(а)</option><option>В основном понял(а)</option><option>Нужно ещё объяснение</option></select></section>
+
+<section class="card"><h2>📤 6. Отправить учителю</h2>
+<p>Кнопка попробует открыть меню «Поделиться» с отчётом и фото. На Android выбери <b>WhatsApp</b>. Если фото не прикрепится автоматически — добавь его в WhatsApp вручную.</p>
+<button class="green" onclick="send()">📲 Отправить всё учителю</button>
+<button class="purple" onclick="downloadReport()">📄 Скачать отчёт</button>
+</section>
+</div>
+
+<script>
+function radio(n){let x=document.querySelector('input[name="'+n+'"]:checked');return x?x.value:''}
+function setF(i,ok){let e=document.getElementById('f'+i);e.textContent=ok?'✓ Верно':'✗ Проверь ответ';e.className=ok?'feedback correct':'feedback wrong'}
+function check(){
+let s=0;
+let a1=radio('q1')==='b';setF(1,a1);if(a1)s++;
+let a2=[...document.querySelectorAll('input[name="q2"]:checked')].map(x=>x.value).sort().join('')==='abc';setF(2,a2);if(a2)s++;
+let a3=radio('q3')==='true';setF(3,a3);if(a3)s++;
+let a4=document.getElementById('q4a').value==='a'&&document.getElementById('q4b').value==='b'&&document.getElementById('q4c').value==='c'&&document.getElementById('q4d').value==='d';setF(4,a4);if(a4)s++;
+let a5=document.getElementById('q5').value==='Обучение с учителем';setF(5,a5);if(a5)s++;
+let a6=radio('q6')==='c';setF(6,a6);if(a6)s++;
+let sc=document.getElementById('score');sc.style.display='block';sc.textContent='Результат: '+s+' из 6 объективных заданий. Открытые ответы и фото проверит учитель.';
+return s;
+}
+function preview(e){let f=e.target.files[0],img=document.getElementById('photoPreview');if(f){img.src=URL.createObjectURL(f);img.style.display='block';document.getElementById('photoName').textContent='Прикреплено: '+f.name}}
+function report(){
+let fio=document.getElementById('fio').value||'Не указано',cl=document.getElementById('class').value||'Не указан';
+let score=document.getElementById('score').textContent||'Проверка не выполнена';
+return 'РАБОЧИЙ ЛИСТ: Основные понятия машинного обучения\n10 класс\n\nУченик: '+fio+'\nКласс: '+cl+'\n\n'+score+'\n\nЗадание 7:\n'+(document.getElementById('q7').value||'Нет ответа')+'\n\nЗадание 8:\n'+(document.getElementById('q8').value||'Нет ответа')+'\n\nРефлексия:\n'+(document.getElementById('r1').value||'Нет ответа')+'\n'+(document.getElementById('r2').value||'Нет ответа')+'\n'+(document.getElementById('r3').value||'Не выбрано');
+}
+async function send(){
+if(!document.getElementById('score').textContent)check();
+let fio=document.getElementById('fio').value||'ученик', txt=report(), p=document.getElementById('photo').files[0];
+try{
+let rf=new File([txt],'Отчет_машинное_обучение.txt',{type:'text/plain'});
+let files=p?[rf,p]:[rf];
+if(navigator.share && (!navigator.canShare || navigator.canShare({files:files}))){await navigator.share({title:'Рабочий лист — машинное обучение',text:'Отчет ученика '+fio+'. Фото тетради приложено.',files:files});return}
+}catch(e){}
+location.href='https://wa.me/77027081500?text='+encodeURIComponent(txt+'\n\nФото записей в тетради отправьте вместе с сообщением.');
+}
+function downloadReport(){if(!document.getElementById('score').textContent)check();let b=new Blob([report()],{type:'text/plain;charset=utf-8'}),a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='Отчет_машинное_обучение_10_класс.txt';a.click()}
+</script></body></html>
