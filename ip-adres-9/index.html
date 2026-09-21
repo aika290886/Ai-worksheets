@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="kk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>9-сынып | IP-адрес</title>
+<style>
+:root{--blue:#2855d9;--dark:#14234b;--bg:#f4f7fc;--card:#fff;--line:#dce3ef;--text:#17223b;--muted:#66728a;--ok:#14804d;--bad:#b52e2e;--gold:#a76d00}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 Arial,sans-serif}
+.wrap{max-width:1050px;margin:auto;padding:0 16px}
+header{background:linear-gradient(135deg,#12224c,#2855d9 65%,#6682e7);color:#fff;padding:42px 0}
+h1{font-size:clamp(36px,8vw,58px);line-height:1.05;margin:10px 0 14px}h2{font-size:29px;margin:0 0 18px;line-height:1.2}h3{font-size:21px;margin:25px 0 9px}
+.eyebrow{text-transform:uppercase;letter-spacing:.6px;font-size:14px}
+.lead{font-size:19px;max-width:850px}
+nav{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid var(--line);padding:10px 16px;display:flex;flex-wrap:wrap;gap:7px;box-shadow:0 2px 12px #14234b12}
+nav a{padding:7px 11px;border:1px solid var(--line);border-radius:10px;text-decoration:none;color:#21428f;background:#f9fbff}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:25px;margin:18px 0;box-shadow:0 7px 24px #18366d0a}
+.visual{background:#eef3ff;border:1px solid #cbd7f7;border-radius:16px;padding:10px;margin:16px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.box{background:#fafcff;border:1px solid var(--line);border-radius:14px;padding:15px}.box b{color:#244cae;font-size:18px}
+.formula{background:#111b32;color:#fff;border-radius:13px;text-align:center;padding:14px;font-size:21px;font-weight:800;margin:15px 0}
+.note{background:#edf3ff;border-left:5px solid var(--blue);padding:13px 16px;border-radius:10px;margin:15px 0}
+.warn{background:#fff5d8;border-left-color:var(--gold)}
+.video{display:inline-block;background:#fff;border:1px solid var(--line);border-radius:11px;padding:11px 14px;color:#21428f;text-decoration:none}
+.task{background:#f8faff;border:1px dashed #7992e7;border-radius:16px;padding:18px;margin:17px 0}
+.task strong{color:#2148aa;font-size:18px}.opts{display:grid;gap:8px;margin:11px 0}
+.opts label{padding:11px 13px;border:1px solid var(--line);border-radius:10px;background:#fff;cursor:pointer}
+input[type=text],input[type=number]{width:100%;padding:11px;border:1px solid #cbd5e2;border-radius:10px;font-size:16px}
+button{border:0;border-radius:11px;padding:10px 16px;background:var(--blue);color:#fff;font-weight:800;cursor:pointer;font-size:15px}
+button.secondary{background:#56627a}.feedback{display:none;margin-top:10px;padding:10px 13px;border-radius:10px}.feedback.ok{display:block;background:#e8f8ef;color:#11643d}.feedback.bad{display:block;background:#fdeaea;color:#8b2525}
+#result{display:none;background:#edf3ff;border-radius:16px;padding:20px;margin-top:18px;font-size:19px}
+.reflection{display:grid;gap:10px}.reflection label{background:#fafcff;border:1px solid var(--line);padding:12px;border-radius:11px}
+.scoretable{width:100%;border-collapse:collapse;margin:15px 0}.scoretable td,.scoretable th{border:1px solid var(--line);padding:9px}.scoretable th{background:#eef2f7}
+footer{text-align:center;padding:30px;color:var(--muted)}
+@media(max-width:650px){.card{padding:18px}nav{position:static}}
+</style>
+</head>
+<body>
+<header>
+<div class="wrap">
+<div class="eyebrow">9-СЫНЫП • ИНФОРМАТИКА • КОМПЬЮТЕРЛІК ЖЕЛІ</div>
+<h1>IP-адрес</h1>
+<p class="lead">Теория → бейнесабақ → күрделірек интерактивті тапсырмалар → өзіндік тексеру → рефлексия → баға және мұғалімге WhatsApp арқылы жіберу.</p>
+</div>
+</header>
+
+<nav>
+<a href="#theory">Теория</a><a href="#video">Бейнесабақ</a><a href="#practice">Тапсырмалар</a><a href="#result">Нәтиже</a><a href="#reflection">Рефлексия</a>
+</nav>
+
+<main class="wrap">
+<section id="theory" class="card">
+<h2>1. IP-адрес дегеніміз не?</h2>
+<p><b>IP-адрес (Internet Protocol address)</b> — компьютерлік желіге қосылған құрылғыны желі ішінде анықтауға және деректер пакеттерін қажетті бағытқа жеткізуге қолданылатын логикалық мекенжай.</p>
+<p>Желіде бірнеше құрылғы бір-бірімен ақпарат алмасады. Пакет белгілі бір құрылғыға жетуі үшін желілік деңгейде оның IP-мекенжайын білу қажет. IP-адресті пошта мекенжайына ұқсатуға болады: поштаға хат жіберу үшін мекенжай керек болса, желіде деректерді жеткізу үшін IP-адрес қолданылады.</p>
+
+<div class="visual">
+<svg viewBox="0 0 900 210" width="100%">
+<rect x="30" y="65" width="180" height="85" rx="18" fill="#fff" stroke="#2855d9" stroke-width="3"/>
+<text x="120" y="105" text-anchor="middle" font-size="22" font-weight="700">Компьютер A</text><text x="120" y="133" text-anchor="middle" font-size="17">192.168.1.10</text>
+<path d="M220 107h115" stroke="#2855d9" stroke-width="5"/><path d="M320 92l20 15-20 15" fill="none" stroke="#2855d9" stroke-width="5"/>
+<rect x="350" y="50" width="200" height="115" rx="22" fill="#dfe8ff" stroke="#2855d9" stroke-width="3"/>
+<text x="450" y="92" text-anchor="middle" font-size="21" font-weight="700">Маршрутизатор</text><text x="450" y="123" text-anchor="middle" font-size="17">бағыттау</text><text x="450" y="148" text-anchor="middle" font-size="14">IP-пакетті келесі желіге жібереді</text>
+<path d="M560 107h115" stroke="#2855d9" stroke-width="5"/><path d="M660 92l20 15-20 15" fill="none" stroke="#2855d9" stroke-width="5"/>
+<rect x="690" y="65" width="180" height="85" rx="18" fill="#fff" stroke="#2855d9" stroke-width="3"/>
+<text x="780" y="105" text-anchor="middle" font-size="22" font-weight="700">Сервер</text><text x="780" y="133" text-anchor="middle" font-size="17">93.184.216.34</text>
+</svg>
+</div>
+
+<h3>IPv4 және IPv6</h3>
+<div class="grid">
+<div class="box"><b>IPv4</b><p>32 биттен тұрады. Әдетте төрт ондық сан нүктемен бөлініп жазылады: <b>192.168.1.10</b>.</p></div>
+<div class="box"><b>IPv6</b><p>128 биттен тұрады. Ұзын адрестерді он алтылық түрде жазуға мүмкіндік береді. Мысалы: <b>2001:db8::1</b>.</p></div>
+</div>
+
+<h3>IPv4 адресінің құрылысы</h3>
+<p>IPv4 адресі төрт <b>октеттен</b> тұрады. Әр октет 8 бит, сондықтан толық адрес 4 × 8 = <b>32 бит</b>.</p>
+<div class="formula">192 . 168 . 1 . 10<br>↑     ↑     ↑     ↑<br>1-октет  2-октет  3-октет  4-октет</div>
+<p>Әр октеттегі мән <b>0-ден 255-ке дейін</b> болады, өйткені 8 бит арқылы 2⁸ = 256 түрлі мәнді көрсетуге болады: 0–255.</p>
+
+<h3>Желілік және хост бөлігі</h3>
+<p>IP-адресте бір бөлік <b>желіні</b>, екінші бөлік сол желідегі нақты <b>құрылғыны (хостты)</b> анықтайды. Бұл бөліктерді қай жерден бөлу керектігін <b>ішкі желі маскасы (subnet mask)</b> көрсетеді.</p>
+<div class="formula">IP:      192.168.1.25<br>Маска:  255.255.255.0<br>Желі:   192.168.1.0</div>
+<p>Маскадағы <b>255</b> тұрған октеттер желі бөлігіне, <b>0</b> тұрған октет хост бөлігіне сәйкес келеді. <b>/24</b> жазбасы да 255.255.255.0 маскасын білдіреді, себебі алғашқы 24 бит — желі биттері.</p>
+
+<h3>Жеке (private) IP-адрестер</h3>
+<p>Жергілікті желілерде арнайы жеке IP-диапазондар кең қолданылады. Негізгі IPv4 private диапазондары:</p>
+<div class="grid">
+<div class="box"><b>10.0.0.0/8</b><p>10.0.0.0 – 10.255.255.255</p></div>
+<div class="box"><b>172.16.0.0/12</b><p>172.16.0.0 – 172.31.255.255</p></div>
+<div class="box"><b>192.168.0.0/16</b><p>192.168.0.0 – 192.168.255.255</p></div>
+</div>
+
+<h3>Желі маскасы және CIDR</h3>
+<p><b>CIDR</b> жазбасында IP-адрестен кейін <b>/сан</b> жазылады. Бұл сан желі бөлігіне тиесілі биттердің санын көрсетеді.</p>
+<table class="scoretable">
+<tr><th>Жазылуы</th><th>Маска</th><th>Желі биттері</th></tr>
+<tr><td>/8</td><td>255.0.0.0</td><td>8</td></tr>
+<tr><td>/16</td><td>255.255.0.0</td><td>16</td></tr>
+<tr><td>/24</td><td>255.255.255.0</td><td>24</td></tr>
+<tr><td>/25</td><td>255.255.255.128</td><td>25</td></tr>
+</table>
+
+<h3>Желі адресі, broadcast және хосттар</h3>
+<p>Мысалы, <b>192.168.10.25/24</b> адресін алайық.</p>
+<div class="grid">
+<div class="box"><b>Желі адресі</b><p>192.168.10.0 — осы ішкі желіні сипаттайды.</p></div>
+<div class="box"><b>Broadcast</b><p>192.168.10.255 — осы желідегі барлық хосттарға жіберуге арналған арнайы адрес.</p></div>
+<div class="box"><b>Хост адресі</b><p>192.168.10.25 — желідегі нақты құрылғының адресі.</p></div>
+</div>
+<p>/24 желісінде теориялық түрде 256 адрес бар. Әдеттегі IPv4 хосттарды есептегенде желі адресі мен broadcast адресі қолданылмайды, сондықтан <b>254 хост адресі</b> қалады.</p>
+
+<h3>Әдепкі шлюз (Default Gateway)</h3>
+<p><b>Әдепкі шлюз</b> — құрылғы өз желісінен тыс орналасқан желілерге деректерді жіберу үшін қолданатын маршрутизатордың адресі. Мысалы, компьютердің IP-адресі 192.168.1.25, маскасы 255.255.255.0, шлюзі 192.168.1.1 болуы мүмкін.</p>
+
+<div class="note warn"><b>Маңызды:</b> IP-адрес пен MAC-адрес бір нәрсе емес. IP — логикалық желілік адрес, ал MAC — желілік интерфейске қатысты аппараттық деңгейдегі адрес.</div>
+</section>
+
+<section id="video" class="card">
+<h2>2. Бейнесабақ</h2>
+<p>Төмендегі қазақ тіліндегі бейнесабақта IP-адрес пен маска, желі адресі және компьютер нөмірі түсіндіріледі.</p>
+<a class="video" target="_blank" href="https://www.youtube.com/watch?v=Zdvh7TBvZUo">▶ IP-адрес және МАСКА — қазақша бейнесабақ</a>
+<p style="color:#66728a;margin-top:12px">Бейнесабақта IP-адрестің жазылуы, масканың қызметі және желі адресін анықтау қарастырылады. citeturn0youtube16</p>
+</section>
+
+<section id="practice" class="card">
+<h2>3. Интерактивті тапсырмалар</h2>
+<p>Барлығы <b>10 тапсырма</b>. Әр дұрыс жауап — 1 балл. Қателессең, бірден дұрыс жауабын көресің.</p>
+
+<div class="task"><strong>1-тапсырма. Дұрыс IPv4-адресті анықта</strong>
+<p>Төмендегі нұсқалардың қайсысы IPv4 форматына сәйкес келеді?</p>
+<div class="opts"><label><input type="radio" name="t1" value="a"> 192.168.1.25</label><label><input type="radio" name="t1" value="b"> 192.168.1.300</label><label><input type="radio" name="t1" value="c"> 192.168.1</label><label><input type="radio" name="t1" value="d"> 192.168.1.25.8</label></div>
+<button onclick="checkRadio('t1','a','f1')">Тексеру</button><div id="f1" class="feedback"></div></div>
+
+<div class="task"><strong>2-тапсырма. Октет</strong>
+<p>IPv4 адресінің әр октетінде ең үлкен қандай ондық мән жазылуы мүмкін?</p>
+<input id="t2" type="number" placeholder="Сан енгіз"><button onclick="checkNum('t2',255,'f2')">Тексеру</button><div id="f2" class="feedback"></div></div>
+
+<div class="task"><strong>3-тапсырма. Private IP</strong>
+<p>Қай адрес жеке (private) IPv4 диапазонына жатады?</p>
+<div class="opts"><label><input type="radio" name="t3" value="a"> 8.8.8.8</label><label><input type="radio" name="t3" value="b"> 192.168.15.20</label><label><input type="radio" name="t3" value="c"> 1.1.1.1</label><label><input type="radio" name="t3" value="d"> 93.184.216.34</label></div>
+<button onclick="checkRadio('t3','b','f3')">Тексеру</button><div id="f3" class="feedback"></div></div>
+
+<div class="task"><strong>4-тапсырма. Масканы түсіну</strong>
+<p><b>192.168.10.25/24</b> адресінің желі адресін анықта.</p>
+<div class="opts"><label><input type="radio" name="t4" value="a"> 192.168.10.0</label><label><input type="radio" name="t4" value="b"> 192.168.0.25</label><label><input type="radio" name="t4" value="c"> 192.168.10.255</label><label><input type="radio" name="t4" value="d"> 192.168.25.0</label></div>
+<button onclick="checkRadio('t4','a','f4')">Тексеру</button><div id="f4" class="feedback"></div></div>
+
+<div class="task"><strong>5-тапсырма. Broadcast</strong>
+<p><b>192.168.10.25/24</b> желісінің broadcast адресін анықта.</p>
+<div class="opts"><label><input type="radio" name="t5" value="a"> 192.168.10.0</label><label><input type="radio" name="t5" value="b"> 192.168.10.1</label><label><input type="radio" name="t5" value="c"> 192.168.10.254</label><label><input type="radio" name="t5" value="d"> 192.168.10.255</label></div>
+<button onclick="checkRadio('t5','d','f5')">Тексеру</button><div id="f5" class="feedback"></div></div>
+
+<div class="task"><strong>6-тапсырма. Бір желі ме?</strong>
+<p><b>192.168.1.20/24</b> және <b>192.168.1.145/24</b> құрылғылары бір ішкі желіде орналасқан ба?</p>
+<div class="opts"><label><input type="radio" name="t6" value="a"> Иә, екеуінің желі адресі бірдей</label><label><input type="radio" name="t6" value="b"> Жоқ, бірінші октеті ғана бірдей</label><label><input type="radio" name="t6" value="c"> Жоқ, әрқайсысы басқа желіде</label></div>
+<button onclick="checkRadio('t6','a','f6')">Тексеру</button><div id="f6" class="feedback"></div></div>
+
+<div class="task"><strong>7-тапсырма. Басқа желіге шығу</strong>
+<p>Компьютер: <b>192.168.1.20/24</b>, әдепкі шлюз: <b>192.168.1.1</b>. Ол <b>8.8.8.8</b> адресіндегі серверге дерек жібергісі келеді. Дерек қай құрылғы арқылы сыртқы желіге бағытталады?</p>
+<div class="opts"><label><input type="radio" name="t7" value="a"> Монитор арқылы</label><label><input type="radio" name="t7" value="b"> Әдепкі шлюз — маршрутизатор арқылы</label><label><input type="radio" name="t7" value="c"> Пернетақта арқылы</label><label><input type="radio" name="t7" value="d"> Тек принтер арқылы</label></div>
+<button onclick="checkRadio('t7','b','f7')">Тексеру</button><div id="f7" class="feedback"></div></div>
+
+<div class="task"><strong>8-тапсырма. /25 маскасы</strong>
+<p><b>192.168.1.130/25</b> адресі қай желіге жатады?</p>
+<div class="opts"><label><input type="radio" name="t8" value="a"> 192.168.1.0/25</label><label><input type="radio" name="t8" value="b"> 192.168.1.128/25</label><label><input type="radio" name="t8" value="c"> 192.168.2.0/25</label><label><input type="radio" name="t8" value="d"> 192.168.0.0/25</label></div>
+<button onclick="checkRadio('t8','b','f8')">Тексеру</button><div id="f8" class="feedback"></div></div>
+
+<div class="task"><strong>9-тапсырма. Адрестің жарамдылығын талда</strong>
+<p>Оқушы <b>172.16.300.10</b> адресін компьютерге енгізді. Неліктен бұл IPv4 адресі жарамсыз?</p>
+<div class="opts"><label><input type="radio" name="t9" value="a"> Бірінші октет жоқ</label><label><input type="radio" name="t9" value="b"> 300 мәні октет үшін 255-тен үлкен</label><label><input type="radio" name="t9" value="c"> IP-адресте нүкте болмауы керек</label><label><input type="radio" name="t9" value="d"> 172 саны қолданылмайды</label></div>
+<button onclick="checkRadio('t9','b','f9')">Тексеру</button><div id="f9" class="feedback"></div></div>
+
+<div class="task"><strong>10-тапсырма. Желілік ойлау</strong>
+<p>Берілгені: <b>10.0.5.37/8</b>. Осы адрестің желі бөлігін көрсет.</p>
+<div class="opts"><label><input type="radio" name="t10" value="a"> 10.0.5</label><label><input type="radio" name="t10" value="b"> 10</label><label><input type="radio" name="t10" value="c"> 0.5.37</label><label><input type="radio" name="t10" value="d"> 37</label></div>
+<button onclick="checkRadio('t10','b','f10')">Тексеру</button><div id="f10" class="feedback"></div></div>
+
+<button onclick="calculate()" style="font-size:17px;padding:13px 20px">Нәтижені есептеу</button>
+<div id="result"></div>
+</section>
+
+<section id="reflection" class="card">
+<h2>4. Рефлексия</h2>
+<p>Төмендегі сөйлемдерді аяқта.</p>
+<div class="reflection">
+<label>💡 Бүгін мен IP-адрес туралы білдім: <input id="r1" type="text" placeholder="өз жауабың"></label>
+<label>🔍 Маған ең қиын болғаны: <input id="r2" type="text" placeholder="өз жауабың"></label>
+<label>🎯 Қайталауым керек тақырып: <input id="r3" type="text" placeholder="өз жауабың"></label>
+<label>⭐ Өз түсіну деңгейім: 
+<select id="r4" style="padding:10px;border-radius:9px;border:1px solid #cbd5e2;font-size:16px;width:100%;margin-top:6px">
+<option>Өте жақсы — бәрін түсіндім</option><option>Жақсы — аздап қайталау керек</option><option>Орташа — маска мен желі адресін қайталау керек</option><option>Қиын болды — теорияны қайта оқимын</option>
+</select></label>
+</div>
+<br>
+<button onclick="sendWhatsApp()" style="font-size:17px;padding:13px 20px">📲 Нәтижені мұғалімге WhatsApp арқылы жіберу</button>
+<div class="note" style="margin-top:15px">WhatsApp батырмасын басқан кезде дайын хабарлама ашылады. Оқушы оны жібермес бұрын қажет болса тексере алады.</div>
+</section>
+
+<section class="card">
+<h2>Бағалау</h2>
+<table class="scoretable">
+<tr><th>Ұпай</th><th>Нәтиже</th></tr>
+<tr><td>9–10</td><td>Өте жақсы меңгерген</td></tr>
+<tr><td>7–8</td><td>Жақсы меңгерген, аздаған қайталау қажет</td></tr>
+<tr><td>5–6</td><td>Негізгі ұғымдар бар, бірақ тақырыпты бекіту қажет</td></tr>
+<tr><td>0–4</td><td>Теорияны қайта оқып, тапсырмаларды қайталап орындау қажет</td></tr>
+</table>
+</section>
+</main>
+
+<footer>9-сынып • Информатика • IP-адрес</footer>
+
+<script>
+const answers={t1:'a',t2:255,t3:'b',t4:'a',t5:'d',t6:'a',t7:'b',t8:'b',t9:'b',t10:'b'};
+const feedbacks={
+t1:'IPv4 төрт октеттен тұрады және әр октет 0–255 аралығында болады.',
+t2:'Әр октет 8 биттен тұрады: 2⁸=256 мән, яғни 0–255.',
+t3:'192.168.0.0/16 — private IPv4 диапазоны.',
+t4:'/24 кезінде алғашқы 24 бит желіге тиесілі, сондықтан желі адресі 192.168.10.0.',
+t5:'/24 желісінің барлық хост биттері 1 болғанда broadcast 192.168.10.255 болады.',
+t6:'Екі адрес те 192.168.1.0/24 желісінде орналасқан.',
+t7:'Басқа желіге шығу үшін пакет әдепкі шлюз — маршрутизаторға жіберіледі.',
+t8:'/25 екі диапазонға бөледі: 0–127 және 128–255. 130 екінші желіде.',
+t9:'IPv4 октетінің ең үлкен мәні 255. 300 жарамсыз.',
+t10:'/8 алғашқы 8 битті, яғни бірінші октетті желі бөлігі етеді: 10.'
+};
+function show(id,ok){
+ const el=document.getElementById('f'+id.slice(1));
+ el.className='feedback '+(ok?'ok':'bad');
+ el.textContent=(ok?'✓ Дұрыс. ':'✗ Қате. ')+feedbacks[id];
+}
+function checkRadio(id,correct,out){
+ const x=document.querySelector('input[name="'+id+'"]:checked');
+ show(id,!!x&&x.value===correct);
+}
+function checkNum(id,correct,out){
+ const v=Number(document.getElementById(id).value);
+ show(id,v===correct);
+}
+function calculate(){
+ let score=0;
+ for(const id in answers){
+  const a=answers[id];
+  let ok=false;
+  if(typeof a==='number') ok=Number(document.getElementById(id).value)===a;
+  else {const x=document.querySelector('input[name="'+id+'"]:checked');ok=!!x&&x.value===a;}
+  if(ok)score++;
+ }
+ let level=score>=9?'Өте жақсы меңгерген':score>=7?'Жақсы меңгерген, аздаған қайталау қажет':score>=5?'Негізгі ұғымдар бар, бірақ тақырыпты бекіту қажет':'Теорияны қайта оқып, тапсырмаларды қайталап орындау қажет';
+ const r=document.getElementById('result');
+ r.style.display='block';
+ r.innerHTML='<b>Нәтиже: '+score+'/10</b><br>Бағалау: '+level+'<br><span style="color:#66728a">Төмендегі рефлексияны толтырып, нәтижені мұғалімге WhatsApp арқылы жібере аласың.</span>';
+ r.scrollIntoView({behavior:'smooth',block:'center'});
+}
+function sendWhatsApp(){
+ let score=0;
+ for(const id in answers){
+  const a=answers[id];let ok=false;
+  if(typeof a==='number')ok=Number(document.getElementById(id).value)===a;
+  else {const x=document.querySelector('input[name="'+id+'"]:checked');ok=!!x&&x.value===a;}
+  if(ok)score++;
+ }
+ const level=score>=9?'Өте жақсы':score>=7?'Жақсы':score>=5?'Қанағаттанарлық':'Қайталау қажет';
+ const r1=document.getElementById('r1').value||'көрсетілмеді';
+ const r2=document.getElementById('r2').value||'көрсетілмеді';
+ const r3=document.getElementById('r3').value||'көрсетілмеді';
+ const r4=document.getElementById('r4').value;
+ const msg='9-сынып. IP-адрес\n\nНәтиже: '+score+'/10\nБағалау: '+level+'\n\nРефлексия:\n• Білдім: '+r1+'\n• Қиын болды: '+r2+'\n• Қайталау керек: '+r3+'\n• Өз деңгейім: '+r4;
+ window.open('https://wa.me/77027081500?text='+encodeURIComponent(msg),'_blank');
+}
+</script>
+</body>
+</html>
