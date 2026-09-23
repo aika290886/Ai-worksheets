@@ -142,7 +142,7 @@
 </div>
 
 <div class="task">
-<h3>9-тапсырма. Концептуалдық выбериу — 1 балл</h3>
+<h3>9. Задание 9. Концептуальный выбор — 1 балл</h3>
 <p>Перцептронның негізгі мақсатын ең дәл сипаттайтын нұсқаны выбери.</p>
 <div class="options">
 <label><input type="radio" name="q9" value="a"> Обязательно распознавать любое изображение на уровне человека</label>
@@ -158,7 +158,7 @@
 <textarea id="q10" class="wide"></textarea>
 </div>
 
-<button class="check" onclick="checkAll()">Барлық тапсырманы тексеру</button>
+<button class="check" onclick="checkAll()">Проверить все задания</button>
 <div id="feedback" class="feedback"></div>
 </section>
 
@@ -182,7 +182,7 @@
 <section class="card">
 <h2>9. Результат и оценка</h2>
 <div class="result">
-<p>Нәтиже: <span id="score" class="score">— / 10</span></p>
+<p>Результат: <span id="score" class="score">— / 10</span></p>
 <p id="level">После проверки заданий результат появится здесь.</p>
 <p class="small">Оценивание: 9–10 баллов — «5»; 7–8 баллов — «4»; 5–6 баллов — «3»; 0–4 балла — «2».</p>
 </div>
@@ -254,18 +254,18 @@ window.scrollTo({top:document.getElementById('score').getBoundingClientRect().to
 function sendWA(){
 const scoreText=document.getElementById('score').textContent;
 if(scoreText==='— / 10'){alert('Сначала проверьте задания.');return;}
-const fio=document.getElementById('fio').value.trim()||'Оқушы';
+const fio=document.getElementById('fio').value.trim()||'Ученик';
 const cls=document.getElementById('className').value.trim()||'10';
 const r1=document.getElementById('r1').value.trim();
 const r2=document.getElementById('r2').value.trim();
 const grade=parseInt(scoreText)||0; const mark=grade>=9?5:grade>=7?4:grade>=5?3:2;
 const msg='10-СЫНЫП — ИНФОРМАТИКА\n' +
-'Тақырып: Перцептрон и его назначение\n\n' +
+'Тема: Перцептрон и его назначение\n\n' +
 'Ученик: '+fio+'\n' +
 'Сынып: '+cls+'\n\n' +
 'НӘТИЖЕ\n' +
 '• Балл: '+scoreText+'\n' +
-'• Баға: '+mark+'\n\n' +
+'• Оценка: '+mark+'\n\n' +
 'РЕФЛЕКСИЯ\n' +
 '• Бүгін түсіндім: '+r1+'\n' +
 '• Қиын болғаны: '+r2;
