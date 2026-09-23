@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>10 класс — Перцептрон и его назначение</title>
+<style>
+:root{--bg:#f3f6fb;--card:#fff;--ink:#182230;--muted:#667085;--blue:#315efb;--violet:#6d4aff;--green:#14966b;--red:#c0362c;--line:#dce3ee;--soft:#eef3ff}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#edf2ff,#f8fafc 42%,#eefaf6);font-family:Inter,Arial,sans-serif;color:var(--ink);line-height:1.55}.wrap{max-width:1050px;margin:auto;padding:16px}.hero{color:#fff;background:linear-gradient(135deg,#18245c,#315efb);border-radius:24px;padding:28px;box-shadow:0 14px 38px #17255422}.hero h1{font-size:34px;line-height:1.15;margin:8px 0}.hero p{margin:5px 0;opacity:.95}.tag{display:inline-block;border-radius:999px;background:#ffffff20;padding:5px 11px;font-weight:800;font-size:13px}.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px;margin:18px 0;box-shadow:0 8px 24px #1720330b}.card h2{margin-top:0}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}.mini{background:#f8fafc;border:1px solid var(--line);border-radius:15px;padding:14px}.formula{background:#111827;color:#fff;border-radius:14px;padding:15px;font-family:ui-monospace,monospace;overflow:auto}.example{background:#effcf7;border-left:5px solid var(--green);padding:14px 16px;border-radius:10px;margin:12px 0}.note{background:#fff8e8;border-left:5px solid #f2a900;padding:14px 16px;border-radius:10px}.step{display:flex;gap:12px;margin:12px 0}.num{min-width:32px;height:32px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-weight:800}.video{display:flex;gap:14px;align-items:center;background:#fff4f4;border:1px solid #ffd4d4;border-radius:16px;padding:16px}.video .play{font-size:30px}.video a{color:#c1121f;font-weight:800;text-decoration:none}.task{border:1px solid var(--line);border-radius:16px;padding:17px;margin:14px 0;background:#fff}.task h3{margin:0 0 8px}.task input,.task select,.task textarea{font:inherit;border:1px solid #c8d1df;border-radius:9px;padding:9px;background:#fff;max-width:100%}.task input{width:180px}.wide{width:100%!important}.row{display:flex;flex-wrap:wrap;gap:9px;align-items:center}.options label{display:block;padding:9px 11px;border:1px solid var(--line);border-radius:10px;margin:7px 0;cursor:pointer}.check{border:0;border-radius:11px;background:var(--blue);color:#fff;font-weight:800;padding:11px 17px;cursor:pointer}.feedback{margin-top:10px;font-weight:800}.ok{color:var(--green)}.bad{color:var(--red)}.score{font-size:25px;font-weight:900}.result{background:#f8fafc;border:2px dashed #b8c4d5;border-radius:16px;padding:18px}.whatsapp{display:inline-block;background:#16a05d;color:#fff;text-decoration:none;border-radius:12px;padding:13px 18px;font-weight:900;border:0;cursor:pointer}.small{font-size:14px;color:var(--muted)}textarea{min-height:75px}.callout{background:var(--soft);border-radius:14px;padding:15px}table{width:100%;border-collapse:collapse}td,th{border:1px solid var(--line);padding:8px;text-align:center}th{background:#f1f5f9}
+@media(max-width:600px){.hero h1{font-size:27px}.card{padding:16px}.wrap{padding:10px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<section class="hero">
+<span class="tag">10-СЫНЫП • ИНФОРМАТИКА</span>
+<h1>Перцептрон және оның мақсаты</h1>
+<p>Интерактивті жұмыс парағы. Тақырыпты түсіндіріп оқы, бейнесабақты көр, содан кейін тапсырмаларды орында.</p>
+<p><b>Барлығы: 10 балл</b></p>
+</section>
+
+<section class="card">
+<h2>1. Перцептрон деген не?</h2>
+<p><b>Перцептрон</b> — кіріс сигналдарын қабылдап, оларды салмақтар арқылы өңдеп, нәтижесінде шешім шығаратын ең қарапайым жасанды нейрондық модельдердің бірі.</p>
+<div class="callout"><b>Қарапайым тілмен:</b> перцептрон бірнеше белгіні «көреді», әр белгінің маңызын салмақ арқылы ескереді және есептелген нәтижеге сүйеніп, мысалы, «иә/жоқ» сияқты шешім шығара алады.</div>
+<h3>Перцептрон не үшін қажет?</h3>
+<div class="grid">
+<div class="mini"><b>Жіктеу</b><br>Объектіні белгілі бір класқа жатқызу.</div>
+<div class="mini"><b>Шешім қабылдау</b><br>Кіріс белгілеріне сүйеніп нәтиже алу.</div>
+<div class="mini"><b>Үлгіні тану</b><br>Белгілер жиынтығы бойынша қарапайым үлгіні ажырату.</div>
+</div>
+</section>
+
+<section class="card">
+<h2>2. Перцептронның негізгі бөліктері</h2>
+<div class="grid">
+<div class="mini"><b>x₁, x₂, …</b><br>Кіріс мәндері немесе белгілер.</div>
+<div class="mini"><b>w₁, w₂, …</b><br>Салмақтар. Әр кірістің шешімге әсерін көрсетеді.</div>
+<div class="mini"><b>b</b><br>Ығысу (bias). Шешім шекарасын реттеуге көмектеседі.</div>
+<div class="mini"><b>Σ</b><br>Кірістердің салмақталған қосындысын есептеу.</div>
+<div class="mini"><b>Белсендіру функциясы</b><br>Есептелген мәннен соңғы шығуды анықтайды.</div>
+</div>
+<div class="formula">z = x₁w₁ + x₂w₂ + ... + xₙwₙ + b</div>
+<p>Қарапайым классикалық перцептронда шығу екі класстың бірін таңдай алады. Мысалы: <b>0 — «жоқ»</b>, <b>1 — «иә»</b>.</p>
+</section>
+
+<section class="card">
+<h2>3. Перцептрон қалай жұмыс істейді?</h2>
+<div class="step"><div class="num">1</div><div><b>Кірістер беріледі.</b> Модельге объектінің белгілері түседі.</div></div>
+<div class="step"><div class="num">2</div><div><b>Салмақтар қолданылады.</b> Әр кіріс өз салмағына көбейтіледі.</div></div>
+<div class="step"><div class="num">3</div><div><b>Қосынды есептеледі.</b> Салмақталған кірістер мен bias қосылады.</div></div>
+<div class="step"><div class="num">4</div><div><b>Шешім шығарылады.</b> Белсендіру ережесі нәтижені белгілі бір класқа жатқызады.</div></div>
+<div class="example"><b>Мысал:</b> x₁=1, x₂=0, w₁=2, w₂=3, b=-1 болса:<br>z = 1·2 + 0·3 - 1 = <b>1</b>.<br>Егер шек 0 болса, 1 нөлден үлкен болғандықтан, шығу 1 болады.</div>
+</section>
+
+<section class="card">
+<h2>4. Ең маңызды ұғым: шешім шекарасы</h2>
+<p>Екі кірісі бар перцептрон үшін есептеу нәтижесі белгілі бір шектен асқанда бір класс, ал шектен төмен болғанда екінші класс таңдалады.</p>
+<div class="formula">Егер z ≥ 0 → y = 1
+Егер z &lt; 0 → y = 0</div>
+<p>Сондықтан перцептронды қарапайым түрде <b>«кірістер → салмақтар → қосынды → шешім»</b> тізбегі ретінде есте сақтауға болады.</p>
+<div class="note"><b>Маңызды:</b> салмақтардың мәні кездейсоқ таңдалып, кейін оқыту барысында түзетілуі мүмкін. Перцептрон дұрыс жауаптарды көре отырып, өз шешім шекарасын бейімдейді.</div>
+</section>
+
+<section class="card">
+<h2>5. Перцептронды оқыту</h2>
+<p>Оқыту кезінде модельдің болжамы дайын дұрыс жауаппен салыстырылады. Егер нәтиже қате болса, салмақтар түзетіледі. Бұл процесс көптеген мысалдар үшін қайталанады.</p>
+<div class="grid">
+<div class="mini"><b>Оқыту мысалы</b><br>Кіріс → дұрыс жауап → перцептронның болжамы → салыстыру → қажет болса салмақтарды өзгерту.</div>
+<div class="mini"><b>Мақсат</b><br>Кейін жаңа, бұрын көрмеген мысал үшін дұрыс класс таңдауға мүмкіндік беру.</div>
+</div>
+<p>Перцептронның маңызды ерекшелігі — ол <b>сызықтық бөлінетін</b> екі классты ажыратуға қабілетті. Күрделі шекаралар үшін көпқабатты нейрондық желілер қажет болуы мүмкін.</p>
+</section>
+
+<section class="card">
+<h2>6. Бейнесабақ</h2>
+<div class="video">
+<div class="play">▶</div>
+<div><b>«Многослойный перцептрон // Введение в нейронные сети»</b><br>
+<span class="small">Бейнесабақта қарапайым нейрондық желі, нейрондар, байланыстар, қабаттар және жіктеу идеясы түсіндіріледі.</span><br>
+<a href="https://www.youtube.com/watch?v=HEIOyuHcirE" target="_blank">YouTube-та бейнесабақты ашу</a></div>
+</div>
+</section>
+
+<section class="card">
+<h2>7. Тапсырмалар — 10 балл</h2>
+
+<div class="task">
+<h3>1-тапсырма. Сәйкестендір — 1 балл</h3>
+<p>Әр ұғымға сәйкес қызметті таңда.</p>
+<div class="row">Кіріс x → <select id="q1a"><option value="">таңда</option><option>объектінің белгісі</option><option>шешім шекарасы</option><option>маңыз коэффициенті</option></select></div>
+<div class="row">Салмақ w → <select id="q1b"><option value="">таңда</option><option>объектінің белгісі</option><option>шешімге әсер ету деңгейі</option><option>соңғы нәтиже</option></select></div>
+<div class="row">Bias b → <select id="q1c"><option value="">таңда</option><option>ығысу параметрі</option><option>кіріс суреті</option><option>класс атауы</option></select></div>
+</div>
+
+<div class="task">
+<h3>2-тапсырма. Есепте — 1 балл</h3>
+<p>x₁=1, x₂=1, w₁=2, w₂=-1, b=0. Перцептронның z мәнін тап.</p>
+<div class="row">z = <input id="q2"></div>
+</div>
+
+<div class="task">
+<h3>3-тапсырма. Шешімді анықта — 1 балл</h3>
+<p>2-тапсырмадағы z мәнін пайдаланып, ереже: z ≥ 0 → 1, z &lt; 0 → 0.</p>
+<div class="row">y = <select id="q3"><option value="">таңда</option><option>0</option><option>1</option></select></div>
+</div>
+
+<div class="task">
+<h3>4-тапсырма. Себепті түсіндір — 1 балл</h3>
+<p>Егер w₁ салмағы 0-ден үлкен болса, x₁ мәнінің өсуі (басқа мәндер өзгермесе) z қосындысына қалай әсер етеді?</p>
+<div class="options">
+<label><input type="radio" name="q4" value="a"> z міндетті түрде азаяды</label>
+<label><input type="radio" name="q4" value="b"> z-ке оң үлес қосады</label>
+<label><input type="radio" name="q4" value="c"> w₁ мәнін автоматты түрде нөлге теңейді</label>
+<label><input type="radio" name="q4" value="d"> bias-ты өзгертеді</label>
+</div>
+</div>
+
+<div class="task">
+<h3>5-тапсырма. Қате жауапты тап — 1 балл</h3>
+<p>Оқушы «перцептрон салмақтарды тек бір рет есептеп, оларды ешқашан өзгертпейді» деді. Бұл пікірді бағала.</p>
+<select id="q5"><option value="">таңда</option><option>Дұрыс</option><option>Қате</option></select>
+<input id="q5why" class="wide" placeholder="Неге? Бір сөйлеммен түсіндір.">
+</div>
+
+<div class="task">
+<h3>6-тапсырма. Жағдайды талда — 1 балл</h3>
+<p>Перцептрон екі объектіні екі класқа бөлуі керек. Белгілердің салмақтары w₁=3 және w₂=1. Қай белгі z нәтижесіне күштірек әсер етеді, егер олардың кіріс мәндері бірдей болса?</p>
+<div class="row">Жауап: <select id="q6"><option value="">таңда</option><option>x₁</option><option>x₂</option><option>bias b</option><option>екеуі бірдей</option></select></div>
+</div>
+
+<div class="task">
+<h3>7-тапсырма. Құрылымын ретте — 1 балл</h3>
+<p>Перцептронның жұмыс кезеңдерін дұрыс ретпен жаз: шешім шығару; кірістерді қабылдау; салмақталған қосындыны есептеу; белсендіру ережесін қолдану.</p>
+<input id="q7" class="wide" placeholder="Мысалы: 1) ... → 2) ... → 3) ... → 4) ...">
+</div>
+
+<div class="task">
+<h3>8-тапсырма. Практикалық мини-модель — 1 балл</h3>
+<p>x₁=2, x₂=1, w₁=1, w₂=2, b=-3. z мәнін және шығуды тап (шек 0).</p>
+<div class="row">z = <input id="q8z"> y = <select id="q8y"><option value="">таңда</option><option>0</option><option>1</option></select></div>
+</div>
+
+<div class="task">
+<h3>9-тапсырма. Концептуалдық таңдау — 1 балл</h3>
+<p>Перцептронның негізгі мақсатын ең дәл сипаттайтын нұсқаны таңда.</p>
+<div class="options">
+<label><input type="radio" name="q9" value="a"> Кез келген суретті міндетті түрде адам деңгейінде тану</label>
+<label><input type="radio" name="q9" value="b"> Кіріс белгілері негізінде қарапайым шешім немесе жіктеу жасау</label>
+<label><input type="radio" name="q9" value="c"> Тек мәтінді сақтау және архивтеу</label>
+<label><input type="radio" name="q9" value="d"> Компьютердің жад көлемін ұлғайту</label>
+</div>
+</div>
+
+<div class="task">
+<h3>10-тапсырма. Өз сөзіңмен — 1 балл</h3>
+<p>«Перцептрон» ұғымын 2–3 сөйлеммен түсіндір. Міндетті түрде кіріс, салмақ және шешім ұғымдарының кемінде екеуін қолдан.</p>
+<textarea id="q10" class="wide"></textarea>
+</div>
+
+<button class="check" onclick="checkAll()">Барлық тапсырманы тексеру</button>
+<div id="feedback" class="feedback"></div>
+</section>
+
+<section class="card">
+<h2>8. Нәтиже және бағалау</h2>
+<div class="result">
+<p>Нәтиже: <span id="score" class="score">— / 10</span></p>
+<p id="level">Тапсырмаларды тексергеннен кейін нәтиже осында шығады.</p>
+<p class="small">Бағалау: 9–10 балл — «5»; 7–8 балл — «4»; 5–6 балл — «3»; 0–4 балл — «2».</p>
+</div>
+</section>
+
+<section class="card">
+<h2>9. Рефлексия және мұғалімге жіберу</h2>
+<p class="small">Атың-жөніңді жазып, нәтижені мұғалімге WhatsApp арқылы жібер.</p>
+<div class="grid">
+<div><label>Аты-жөнің:<br><input id="fio" class="wide"></label></div>
+<div><label>Сыныбы:<br><input id="className" value="10" class="wide"></label></div>
+<div><label>Мен бүгін түсіндім:<br><textarea id="r1" class="wide"></textarea></label></div>
+<div><label>Маған қиын болғаны:<br><textarea id="r2" class="wide"></textarea></label></div>
+</div>
+<button class="whatsapp" onclick="sendWA()">Нәтижені WhatsApp арқылы жіберу</button>
+<p class="small">Батырма мұғалімнің WhatsApp нөміріне дайын хабарлама ашады.</p>
+</section>
+</div>
+
+<script>
+function val(id){return document.getElementById(id).value.trim().toLowerCase();}
+function radio(name){const x=document.querySelector('input[name="'+name+'"]:checked');return x?x.value:'';}
+function checkAll(){
+let s=0;
+// 1
+if(val('q1a')==='объектінің белгісі'&&val('q1b')==='шешімге әсер ету деңгейі'&&val('q1c')==='ығысу параметрі')s++;
+// 2
+if(val('q2')==='1')s++;
+// 3
+if(val('q3')==='1')s++;
+// 4
+if(radio('q4')==='b')s++;
+// 5
+if(val('q5')==='қате'&&val('q5why').length>=10)s++;
+// 6
+if(val('q6')==='x₁')s++;
+// 7 accept order variants using keywords
+const q7=val('q7').replace(/[→,;]/g,' ').replace(/\d\)/g,'');
+if(q7.indexOf('кірістерді қабылдау')<q7.indexOf('салмақталған қосынды')&&q7.indexOf('салмақталған қосынды')<q7.indexOf('белсендіру')&&q7.indexOf('белсендіру')<q7.indexOf('шешім шығару'))s++;
+// 8
+if(val('q8z')==='1'&&val('q8y')==='1')s++;
+// 9
+if(radio('q9')==='b')s++;
+// 10
+const q10=val('q10'); if(q10.length>=35&&((q10.includes('кіріс')||q10.includes('салмақ'))&&(q10.includes('салмақ')||q10.includes('шешім')||q10.includes('нәтиже'))))s++;
+document.getElementById('score').textContent=s+' / 10';
+const level=s>=9?'Баға: 5 — тақырыпты өте жақсы меңгерген.':s>=7?'Баға: 4 — негізгі ұғымдарды меңгерген, кейбір тұстарды қайталау керек.':s>=5?'Баға: 3 — негізгі түсінік бар, есептеу мен алгоритмді қосымша жаттықтыру қажет.':'Баға: 2 — теорияны қайта қарап, перцептронның жұмыс кезеңдерін қадамдап орындау қажет.';
+document.getElementById('level').textContent=level;
+document.getElementById('feedback').textContent='Тексеру аяқталды. Қай тапсырмаларда қате кеткенін теориядағы тиісті бөліммен салыстырып қара.';
+window.scrollTo({top:document.getElementById('score').getBoundingClientRect().top+window.scrollY-120,behavior:'smooth'});
+}
+function sendWA(){
+const scoreText=document.getElementById('score').textContent;
+if(scoreText==='— / 10'){alert('Алдымен тапсырмаларды тексеріңіз.');return;}
+const fio=document.getElementById('fio').value.trim()||'Оқушы';
+const cls=document.getElementById('className').value.trim()||'10';
+const r1=document.getElementById('r1').value.trim();
+const r2=document.getElementById('r2').value.trim();
+const grade=parseInt(scoreText)||0; const mark=grade>=9?5:grade>=7?4:grade>=5?3:2;
+const msg='10-сынып информатика\nТақырып: Перцептрон және оның мақсаты\nОқушы: '+fio+'\nСынып: '+cls+'\nНәтиже: '+scoreText+'\nБаға: '+mark+'\nРефлексия: '+r1+'\nҚиын болғаны: '+r2;
+window.open('https://wa.me/77027081500?text='+encodeURIComponent(msg),'_blank');
+}
+</script>
+</body>
+</html>
