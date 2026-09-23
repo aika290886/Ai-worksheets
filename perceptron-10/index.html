@@ -163,7 +163,24 @@
 </section>
 
 <section class="card">
-<h2>8. Нәтиже және бағалау</h2>
+<h2>8. Бланк жауаптары</h2>
+<p class="small">Жауаптарың тапсырмалардан автоматты түрде осы бланкке жиналады. Тексеру үшін төмендегі батырманы бас.</p>
+<div class="grid">
+<div class="mini"><b>1.</b> <span id="ans1">—</span></div>
+<div class="mini"><b>2.</b> <span id="ans2">—</span></div>
+<div class="mini"><b>3.</b> <span id="ans3">—</span></div>
+<div class="mini"><b>4.</b> <span id="ans4">—</span></div>
+<div class="mini"><b>5.</b> <span id="ans5">—</span></div>
+<div class="mini"><b>6.</b> <span id="ans6">—</span></div>
+<div class="mini"><b>7.</b> <span id="ans7">—</span></div>
+<div class="mini"><b>8.</b> <span id="ans8">—</span></div>
+<div class="mini"><b>9.</b> <span id="ans9">—</span></div>
+<div class="mini"><b>10.</b> <span id="ans10">—</span></div>
+</div>
+</section>
+
+<section class="card">
+<h2>9. Нәтиже және бағалау</h2>
 <div class="result">
 <p>Нәтиже: <span id="score" class="score">— / 10</span></p>
 <p id="level">Тапсырмаларды тексергеннен кейін нәтиже осында шығады.</p>
@@ -172,7 +189,7 @@
 </section>
 
 <section class="card">
-<h2>9. Рефлексия және мұғалімге жіберу</h2>
+<h2>10. Рефлексия және мұғалімге жіберу</h2>
 <p class="small">Атың-жөніңді жазып, нәтижені мұғалімге WhatsApp арқылы жібер.</p>
 <div class="grid">
 <div><label>Аты-жөнің:<br><input id="fio" class="wide"></label></div>
@@ -188,7 +205,24 @@
 <script>
 function val(id){return document.getElementById(id).value.trim().toLowerCase();}
 function radio(name){const x=document.querySelector('input[name="'+name+'"]:checked');return x?x.value:'';}
+function syncAnswers(){
+const get=(id)=>{const e=document.getElementById(id);return e?e.value.trim()||'—':'—'};
+const rr=(name)=>{const e=document.querySelector('input[name="'+name+'"]:checked');return e?e.parentElement.textContent.trim():'—'};
+document.getElementById('ans1').textContent='x: '+get('q1a')+' | w: '+get('q1b')+' | b: '+get('q1c');
+document.getElementById('ans2').textContent='z = '+get('q2');
+document.getElementById('ans3').textContent='y = '+get('q3');
+document.getElementById('ans4').textContent=rr('q4');
+document.getElementById('ans5').textContent=get('q5')+(get('q5why')!=='—'?' — '+get('q5why'):'');
+document.getElementById('ans6').textContent=get('q6');
+document.getElementById('ans7').textContent=get('q7');
+document.getElementById('ans8').textContent='z = '+get('q8z')+' | y = '+get('q8y');
+document.getElementById('ans9').textContent=rr('q9');
+document.getElementById('ans10').textContent=get('q10');
+}
+document.addEventListener('input',syncAnswers);
+document.addEventListener('change',syncAnswers);
 function checkAll(){
+syncAnswers();
 let s=0;
 // 1
 if(val('q1a')==='объектінің белгісі'&&val('q1b')==='шешімге әсер ету деңгейі'&&val('q1c')==='ығысу параметрі')s++;
@@ -225,7 +259,16 @@ const cls=document.getElementById('className').value.trim()||'10';
 const r1=document.getElementById('r1').value.trim();
 const r2=document.getElementById('r2').value.trim();
 const grade=parseInt(scoreText)||0; const mark=grade>=9?5:grade>=7?4:grade>=5?3:2;
-const msg='10-сынып информатика\nТақырып: Перцептрон және оның мақсаты\nОқушы: '+fio+'\nСынып: '+cls+'\nНәтиже: '+scoreText+'\nБаға: '+mark+'\nРефлексия: '+r1+'\nҚиын болғаны: '+r2;
+const msg='10-СЫНЫП — ИНФОРМАТИКА\n' +
+'Тақырып: Перцептрон және оның мақсаты\n\n' +
+'Оқушы: '+fio+'\n' +
+'Сынып: '+cls+'\n\n' +
+'НӘТИЖЕ\n' +
+'• Балл: '+scoreText+'\n' +
+'• Баға: '+mark+'\n\n' +
+'РЕФЛЕКСИЯ\n' +
+'• Бүгін түсіндім: '+r1+'\n' +
+'• Қиын болғаны: '+r2;
 window.open('https://wa.me/77027081500?text='+encodeURIComponent(msg),'_blank');
 }
 </script>
